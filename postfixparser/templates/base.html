@@ -2,32 +2,13 @@
 <html>
 <head>
     <title>Privex SMTP Mail Info</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.privex.io/lib/semanticui/2.4.2/semantic.min.css"
-          integrity="sha384-JKIDqM48bt14NZpzl9v0AP36VK2C/X6RuSPfimxpoWdSANUXblZUX1cgdQw8cZUK" crossorigin="anonymous"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.privex.io/lib/notie/4.3.1/notie.min.css"
-          integrity="sha384-Jv3WSys2uSFeLomz0Yj7cvY3du+3jFXWOn97+UCbEUTTTQX8ljqok72pu03WznpC" crossorigin="anonymous"/>
-    <style>
-        .main {margin-top: 1em;}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.css" integrity="sha512-7DgarsuahzxiOonlZeYgjXuPFVEDIylPzzlmANJdccCIO0H7ofXKbAKf0FWCkh8NkCFswe3Hpj6HegSTYH6SJQ==" crossorigin="anonymous" />
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
 
-        #email-metadata td:nth-child(2) {
-            width: 70%;
-        }
-        @media only screen and (min-width: 1200px) {
-            .ui.fluid.main.container {
-                width: 90%;
-            }
-        }
-    </style>
-
-    <script src="https://cdn.privex.io/lib/notie/4.3.1/notie.min.js"
-            integrity="sha384-Ulw8y0TpoFZw3cNSRM88s1+p9O/TL6qMFIzDn9Bs+qETYhMp0UwMiv+vCylRfZVI"
-            crossorigin="anonymous" async></script>
-    <script src="https://cdn.privex.io/lib/jquery/3.3.1/jquery.min.js"
-            integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
-            crossorigin="anonymous" async></script>
-    <script src="https://cdn.privex.io/lib/semanticui/2.4.2/semantic.min.js"
-            integrity="sha384-yvMKoOb78htxD1Bp6oo2tsnFh4lwwz+621kAp2m8YeFkSe9CM2+N1coOvw4R0uwt"
-            crossorigin="anonymous" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.min.js" integrity="sha512-NHRCwRf2LnVSlLDejCA9oS3fG3/FLSQIPCjAWl3M7tVi5wszwr6FxkjotWnQDXLE+aLKcxRrzFDNEgXj9nvkPw==" crossorigin="anonymous" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" async></script>
 
 
     {% block head_scripts %}
@@ -46,14 +27,10 @@
 
         {% block content %}{% endblock %}
         <div class="ui segment" id="footer">
-            &copy; 2019 Privex Inc. --- Released under the GNU AGPL v3 ---
+            &copy; 2020 Privex Inc. --- Released under the GNU AGPL v3 ---
             <a href="https://github.com/Privex/postfix-parser" target="_BLANK">View source on Github</a>
         </div>
     </div>
-
-
-
-
 
     {% block scripts %}
     {% endblock %}
