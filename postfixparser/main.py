@@ -29,10 +29,10 @@ from postfixparser.parser import parse_line
 log = logging.getLogger(__name__)
 
 
-_match = r'([A-Za-z]+[ \t]+[0-9]+[ \t]+[0-9]+\:[0-9]+:[0-9]+).*'
+_match = r'([A-Za-z]+[ \t]+[0-9]+[ \t]+[0-9]+\:[0-9]+:[0-9]+).*[\: ]'
 """(0) Regex to match the Date/Time at the start of each log line"""
 
-_match += r'([A-F0-9]{10})\:[ \t]+?(.*)'
+_match += r'([A-F0-9]+)\:[ \t]+?(.*)'
 """Regex to match the (1) Queue ID and the (2) Log Message"""
 
 match = re.compile(_match)
@@ -102,6 +102,10 @@ async def main():
     for m in msg_list:
         try:
             mfrom, mto = m.get('mail_from'), m.get('mail_to')
+
+            if not mfrom: continue
+            if not mto: continue
+
             mfrom_dom, mto_dom = mfrom.split('@')[1], mto.split('@')[1]
             if mfrom_dom in settings.ignore_domains or mto_dom in settings.ignore_domains:
                 continue
